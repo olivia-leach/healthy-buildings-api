@@ -1,3 +1,3 @@
 class ProfileSerializer < ActiveModel::Serializer
-  attributes :id, :admin_rights, :buildings
+  attributes :id, :admin_rights
 end
