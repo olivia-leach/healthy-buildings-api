@@ -1,0 +1,37 @@
+measure,cat,foundation,phase,weight
+Enhanced IAQ Strategies,Baseline,Ventilation,I, 0.03
+Thermal Comfort,Baseline,Ventilation,I, 0.03
+IAQ Performance,Baseline,Air Quality,I, 0.03
+Low-emitting Materials,Baseline,Air Quality,I, 0.03
+IAQ Assessment,Baseline,Air Quality,I, 0.03
+Acoustic Performance,Baseline,Noise,I, 0.03
+Low-emitting Materials,Baseline,Dirt & Dust,I, 0.01
+Green Cleaning,Baseline,Dirt & Dust,I, 0.02
+Integrated Pest Management,Baseline,Pest Control,I, 0.03
+Interior Lighting,Baseline,Lighting & Views,I, 0.03
+Daylighting,Baseline,Lighting & Views,I, 0.03
+Views,Baseline,Lighting & Views,I, 0.03
+Mold Prevention,Baseline,Moisture,I, 0.03
+ETS Control,Baseline,Smoking Policy,I, 0.03
+Occupant Surveys,Baseline,Health/Well-being,I, 0.03
+Air exchange rate,Daily,Ventilation,I, 0.07
+Thermal comfort,Daily,Ventilation,I, 0.07
+TVOCs,Daily,Air Quality,Ib, 0.05
+PM25,Daily,Air Quality,Ib, 0.03
+Noise,Daily,Noise,I, 0.03
+Pollen Counts,Daily,Dirt & Dust,II, 0.01
+Light,Daily,Lighting & Views,Ib, 0.04
+Humidity,Daily,Moisture,I, 0.01
+Filter Changes,Annual,Ventilation,II, 0.02
+Air Quality Testing,Annual,Air Quality,II, 0.04
+Outdoor Air Pollution,Annual,Air Quality,II, 0.01
+Air Quality Testing,Annual,Dirt & Dust,II, 0.02
+Water Testing,Annual,Water,II, 0.05
+Surrounding Greenness,Annual,Lighting & Views,II, 0.02
+Annual Commissioning,Annual,Safety & Security,II, 0.03
+Occupant Survey Results,Annual,Health/Well-being,II, 0.05
+Walkability,Annual,Health/Well-being,II, 0.01
+Heart Rate,Daily,Health/Well-being,III, 0.01
+Steps,Daily,Health/Well-being,III, 0.02
+Sleep,Daily,Health/Well-being,III, 0.02
+,,,,
