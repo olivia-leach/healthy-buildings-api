@@ -1,3 +1,3 @@
 class FrameworkSerializer < ActiveModel::Serializer
-  attributes :id
+  attributes :id, :name, :cat, :foundation, :phase, :weight
 end

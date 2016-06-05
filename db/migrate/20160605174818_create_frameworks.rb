@@ -1,7 +1,7 @@
 class CreateFrameworks < ActiveRecord::Migration
   def change
     create_table :frameworks do |t|
-      t.text :measure
+      t.text :name
       t.text :cat
       t.text :foundation
       t.text :phase
