@@ -10,7 +10,7 @@ class CreateBuildings < ActiveRecord::Migration
       t.float :lat
       t.float :long
       t.integer :sq_ft
-      t.date :year_const
+      t.integer :year_const
       t.integer :num_floors
       t.text :notes
 

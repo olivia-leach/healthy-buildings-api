@@ -1,10 +1,12 @@
-class BuildingsController < ApplicationController
+class BuildingsController < OpenReadController
   before_action :set_building, only: [:show, :update, :destroy]
+  before_action :authenticate, except: [:index, :show]
 
   # GET /buildings
   # GET /buildings.json
   def index
-    @buildings = Building.all
+    # @buildings = Building.all
+    @buildings = current_user.buildings
 
     render json: @buildings
   end
