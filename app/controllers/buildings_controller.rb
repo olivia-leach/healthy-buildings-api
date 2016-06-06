@@ -20,7 +20,8 @@ class BuildingsController < OpenReadController
   # POST /buildings
   # POST /buildings.json
   def create
-    @building = Building.new(building_params)
+    # @building = Building.new(building_params)
+    @building = current_user.buildings.new(building_params.merge(user_id: params[:user_id]))
 
     if @building.save
       render json: @building, status: :created, location: @building
@@ -57,6 +58,6 @@ class BuildingsController < OpenReadController
     end
 
     def building_params
-      params.require(:building).permit(:user_id, :BID, :name, :address, :city, :state, :zip, :lat, :long, :sq_ft, :year_const, :num_floors, :notes)
+      params.require(:building).permit(:BID, :name, :address, :city, :state, :zip, :lat, :long, :sq_ft, :year_const, :num_floors, :notes)
     end
 end
