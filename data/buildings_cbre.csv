@@ -1,0 +1,7 @@
+BID,name,address,city,state,zip,lat,long,sq_ft,year_const,num_floors,notes
+5,Crescent VII C,8390 East Crescent Parkway, Greenwood Village, CO, 80111, 39.622378,-104.890485,135332,1938,6,"One building, partly renovated to green"
+6,Crescent VII G,8390 East Crescent Parkway, Greenwood Village, CO, 80111, 39.622378,-104.890485,135332,1938,6,"One building, partly renovated to green"
+7,1737 N First,1737 N First St, San Jose, CA,95112,37.368935,-121.915786,84453,1971,6,
+8,225 W Santa Clara,225 W Santa Clara, San Jose, CA,95113,37.335081,-121.894675,646246,1934,11,
+9,234 S Brand,234 S Brand St, Glendale, CA,91204,34.14309,-118.254927,90872,1953,7,
+10,400 S Hope,400 S Hope St, Los Angeles, CA,90071,34.051552,-118.253498,714406,1929,26,
