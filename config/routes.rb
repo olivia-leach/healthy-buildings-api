@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  resources :data_points, except: [:new, :edit]
   resources :sensors, except: [:new, :edit]
   resources :measures, except: [:new, :edit]
   resources :frameworks, except: [:new, :edit]
