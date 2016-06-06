@@ -63,7 +63,7 @@ CSV.foreach('data/sensor_data.csv', headers: true) do |data|
   end
   sens_id = hash["PID"].to_i
   result["sensor_id"] = sensor_key[sens_id]
-  DataPoint.create!(result)
+  Point.create!(result)
 end
 
 # load baseline data for each building
