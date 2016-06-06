@@ -66,6 +66,34 @@ CSV.foreach('data/sensor_data.csv', headers: true) do |data|
   Point.create!(result)
 end
 
+# load daily data for each building
+CSV.foreach('data/daily_data.csv', headers: true) do |day|
+  hash = day.to_hash
+  result = {
+    "day" => hash["day"],
+    "date" => hash["date"],
+    "AER_score" => hash["AER_score"],
+    "TC_score" => hash["TC_score"],
+    "humidity_score" => hash["humidity_score"],
+    "noise_score" => hash["noise_score"],
+    "co2" => hash["co2"],
+    "AER" => hash["AER"],
+    "temp" => hash["temp"],
+    "RH" => hash["RH"],
+    "SH" => hash["SH"],
+    "noise" => hash["noise"],
+    "PMV" => hash["PMV"],
+    "PPD" => hash["PPD"]
+  }
+  building_key = {}
+  manager.buildings.each do |building|
+    building_key[building["BID"]] = building["id"]
+  end
+  build_id = hash["BID"].to_i
+  result["building_id"] = building_key[build_id]
+  Day.create!(result)
+end
+
 # load baseline data for each building
 CSV.foreach('data/baseline.csv', headers: true) do |baseline|
   hash = baseline.to_hash

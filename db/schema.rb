@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160606144301) do
+ActiveRecord::Schema.define(version: 20160606162338) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -44,6 +44,28 @@ ActiveRecord::Schema.define(version: 20160606144301) do
   end
 
   add_index "buildings", ["user_id"], name: "index_buildings_on_user_id", using: :btree
+
+  create_table "days", force: :cascade do |t|
+    t.integer  "day"
+    t.date     "date"
+    t.float    "AER_score"
+    t.float    "TC_score"
+    t.float    "humidity_score"
+    t.float    "noise_score"
+    t.float    "co2"
+    t.float    "AER"
+    t.float    "temp"
+    t.float    "RH"
+    t.float    "SH"
+    t.float    "noise"
+    t.float    "PMV"
+    t.float    "PPD"
+    t.integer  "building_id",    null: false
+    t.datetime "created_at",     null: false
+    t.datetime "updated_at",     null: false
+  end
+
+  add_index "days", ["building_id"], name: "index_days_on_building_id", using: :btree
 
   create_table "examples", force: :cascade do |t|
     t.text     "text",       null: false
@@ -127,6 +149,7 @@ ActiveRecord::Schema.define(version: 20160606144301) do
 
   add_foreign_key "baselines", "buildings"
   add_foreign_key "buildings", "users"
+  add_foreign_key "days", "buildings"
   add_foreign_key "examples", "users"
   add_foreign_key "measures", "buildings"
   add_foreign_key "measures", "frameworks"
