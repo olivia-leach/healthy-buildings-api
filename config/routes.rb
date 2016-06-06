@@ -1,4 +1,9 @@
 Rails.application.routes.draw do
+  resources :sensors, except: [:new, :edit]
+  resources :measures, except: [:new, :edit]
+  resources :frameworks, except: [:new, :edit]
+  resources :baselines, except: [:new, :edit]
+  resources :buildings, except: [:new, :edit]
   resources :profiles, except: [:new, :edit]
   resources :examples, except: [:new, :edit]
   post '/sign-up' => 'users#signup'

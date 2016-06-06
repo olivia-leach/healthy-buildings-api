@@ -1,3 +1,3 @@
 class BaselineSerializer < ActiveModel::Serializer
-  attributes :id, :certified, :building_id, :measures
+  attributes :id, :certified, :building_id
 end

@@ -11,10 +11,39 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160604030541) do
+ActiveRecord::Schema.define(version: 20160605214944) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "baselines", force: :cascade do |t|
+    t.boolean  "certified"
+    t.integer  "building_id", null: false
+    t.datetime "created_at",  null: false
+    t.datetime "updated_at",  null: false
+  end
+
+  add_index "baselines", ["building_id"], name: "index_baselines_on_building_id", using: :btree
+
+  create_table "buildings", force: :cascade do |t|
+    t.integer  "BID"
+    t.text     "name"
+    t.text     "address"
+    t.text     "city"
+    t.text     "state"
+    t.text     "zip"
+    t.float    "lat"
+    t.float    "long"
+    t.integer  "sq_ft"
+    t.integer  "year_const"
+    t.integer  "num_floors"
+    t.text     "notes"
+    t.integer  "user_id",    null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  add_index "buildings", ["user_id"], name: "index_buildings_on_user_id", using: :btree
 
   create_table "examples", force: :cascade do |t|
     t.text     "text",       null: false
@@ -25,6 +54,28 @@ ActiveRecord::Schema.define(version: 20160604030541) do
 
   add_index "examples", ["user_id"], name: "index_examples_on_user_id", using: :btree
 
+  create_table "frameworks", force: :cascade do |t|
+    t.text     "name"
+    t.text     "cat"
+    t.text     "foundation"
+    t.text     "phase"
+    t.float    "weight"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "measures", force: :cascade do |t|
+    t.float    "score"
+    t.float    "value"
+    t.integer  "building_id",  null: false
+    t.integer  "framework_id", null: false
+    t.datetime "created_at",   null: false
+    t.datetime "updated_at",   null: false
+  end
+
+  add_index "measures", ["building_id"], name: "index_measures_on_building_id", using: :btree
+  add_index "measures", ["framework_id"], name: "index_measures_on_framework_id", using: :btree
+
   create_table "profiles", force: :cascade do |t|
     t.boolean  "admin_rights", default: false
     t.integer  "user_id",                      null: false
@@ -33,6 +84,16 @@ ActiveRecord::Schema.define(version: 20160604030541) do
   end
 
   add_index "profiles", ["user_id"], name: "index_profiles_on_user_id", using: :btree
+
+  create_table "sensors", force: :cascade do |t|
+    t.integer  "floor"
+    t.integer  "PID"
+    t.integer  "building_id", null: false
+    t.datetime "created_at",  null: false
+    t.datetime "updated_at",  null: false
+  end
+
+  add_index "sensors", ["building_id"], name: "index_sensors_on_building_id", using: :btree
 
   create_table "users", force: :cascade do |t|
     t.string   "email",           null: false
@@ -45,6 +106,11 @@ ActiveRecord::Schema.define(version: 20160604030541) do
   add_index "users", ["email"], name: "index_users_on_email", unique: true, using: :btree
   add_index "users", ["token"], name: "index_users_on_token", unique: true, using: :btree
 
+  add_foreign_key "baselines", "buildings"
+  add_foreign_key "buildings", "users"
   add_foreign_key "examples", "users"
+  add_foreign_key "measures", "buildings"
+  add_foreign_key "measures", "frameworks"
   add_foreign_key "profiles", "users"
+  add_foreign_key "sensors", "buildings"
 end
