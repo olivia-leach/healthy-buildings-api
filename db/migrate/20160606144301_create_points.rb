@@ -1,6 +1,6 @@
-class CreateDataPoints < ActiveRecord::Migration
+class CreatePoints < ActiveRecord::Migration
   def change
-    create_table :data_points do |t|
+    create_table :points do |t|
       t.datetime :dateTime
       t.float :temp
       t.float :humidity
