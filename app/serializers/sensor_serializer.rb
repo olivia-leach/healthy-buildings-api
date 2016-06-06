@@ -1,3 +1,3 @@
 class SensorSerializer < ActiveModel::Serializer
-  attributes :id, :floor
+  attributes :id, :floor, :data_points
 end
