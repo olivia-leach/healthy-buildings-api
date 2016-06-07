@@ -43,13 +43,13 @@ end
 CSV.foreach('data/sensor_data.csv', headers: true) do |data|
   hash = data.to_hash
   result = {
-    "dateTime" => hash["DateTimeR"],
+    "datetime" => hash["DateTimeR"],
     "temp" => hash["Temp"],
     "humidity" => hash["Humidity"],
     "co2" => hash["CO2"],
     "noise" => hash["Noise"],
     "pressure" => hash["Pressure"],
-    "PPD" => hash["PPD"],
+    "ppd" => hash["PPD"],
     "humidity_score" => hash["Humidity_Score"],
     "noise_score" => hash["Noise_Score"],
     "co2_score" => hash["CO2_Score"],
@@ -72,18 +72,18 @@ CSV.foreach('data/daily_data.csv', headers: true) do |day|
   result = {
     "day" => hash["day"],
     "date" => hash["date"],
-    "AER_score" => hash["AER_score"],
-    "TC_score" => hash["TC_score"],
+    "aer_score" => hash["AER_score"],
+    "tc_score" => hash["TC_score"],
     "humidity_score" => hash["humidity_score"],
     "noise_score" => hash["noise_score"],
     "co2" => hash["co2"],
-    "AER" => hash["AER"],
+    "aer" => hash["AER"],
     "temp" => hash["temp"],
-    "RH" => hash["RH"],
-    "SH" => hash["SH"],
+    "rh" => hash["RH"],
+    "sh" => hash["SH"],
     "noise" => hash["noise"],
-    "PMV" => hash["PMV"],
-    "PPD" => hash["PPD"]
+    "pmv" => hash["PMV"],
+    "ppd" => hash["PPD"]
   }
   building_key = {}
   manager.buildings.each do |building|

@@ -1,13 +1,13 @@
 class CreatePoints < ActiveRecord::Migration
   def change
     create_table :points do |t|
-      t.datetime :dateTime
+      t.datetime :datetime
       t.float :temp
       t.float :humidity
       t.float :co2
       t.float :noise
       t.float :pressure
-      t.float :PPD
+      t.float :ppd
       t.float :humidity_score
       t.float :noise_score
       t.float :co2_score

@@ -48,18 +48,18 @@ ActiveRecord::Schema.define(version: 20160606162338) do
   create_table "days", force: :cascade do |t|
     t.integer  "day"
     t.date     "date"
-    t.float    "AER_score"
-    t.float    "TC_score"
+    t.float    "aer_score"
+    t.float    "tc_score"
     t.float    "humidity_score"
     t.float    "noise_score"
     t.float    "co2"
-    t.float    "AER"
+    t.float    "aer"
     t.float    "temp"
-    t.float    "RH"
-    t.float    "SH"
+    t.float    "rh"
+    t.float    "sh"
     t.float    "noise"
-    t.float    "PMV"
-    t.float    "PPD"
+    t.float    "pmv"
+    t.float    "ppd"
     t.integer  "building_id",    null: false
     t.datetime "created_at",     null: false
     t.datetime "updated_at",     null: false
@@ -99,13 +99,13 @@ ActiveRecord::Schema.define(version: 20160606162338) do
   add_index "measures", ["framework_id"], name: "index_measures_on_framework_id", using: :btree
 
   create_table "points", force: :cascade do |t|
-    t.datetime "dateTime"
+    t.datetime "datetime"
     t.float    "temp"
     t.float    "humidity"
     t.float    "co2"
     t.float    "noise"
     t.float    "pressure"
-    t.float    "PPD"
+    t.float    "ppd"
     t.float    "humidity_score"
     t.float    "noise_score"
     t.float    "co2_score"
