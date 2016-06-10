@@ -1,4 +1,4 @@
-# API for Healthy Buildings Web App
+gi# API for Healthy Buildings Web App
 June 9, 2016 - Olivia Leach.
 
 API for demo version of healthy buildings dashboard website. Tracks "healthy buildings" that belong to users, and allows for CRUD functionality between Users and their buildings.
@@ -11,11 +11,15 @@ Live website: http://olivia-leach.github.io/healthy-buildings-app/#/
 
 Link to front end repo: https://github.com/olivia-leach/healthy-buildings-app
 
-## Technology Used
+## Technologies Used
 
 * Ruby on Rails
 * PostgresSQL
 * ActiveRecord
+
+## ERD
+
+![ERD](https://github.com/olivia-leach/healthy-buildings-api/blob/master/ERD.jpg)
 
 ## Models & Relationships
 
