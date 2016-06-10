@@ -1,4 +1,4 @@
-agi# API for Healthy Buildings Web App
+# API for Healthy Buildings Web App
 June 9, 2016 - Olivia Leach.
 
 API for demo version of healthy buildings dashboard website. Tracks "healthy buildings" that belong to users, and allows for CRUD functionality between Users and their buildings.
