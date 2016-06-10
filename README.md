@@ -11,6 +11,12 @@ Live website: http://olivia-leach.github.io/healthy-buildings-app/#/
 
 Link to front end repo: https://github.com/olivia-leach/healthy-buildings-app
 
+## Technology Used
+
+* Ruby on Rails
+* PostgresSQL
+* ActiveRecord
+
 ## Models & Relationships
 
 1. User
