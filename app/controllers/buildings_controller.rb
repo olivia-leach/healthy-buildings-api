@@ -1,6 +1,6 @@
 class BuildingsController < OpenReadController
   before_action :set_building, only: [:show, :update, :destroy]
-  before_action :authenticate, except: [:index, :show]
+  before_action :authenticate
 
   # GET /buildings
   # GET /buildings.json

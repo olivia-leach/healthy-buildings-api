@@ -1,6 +1,6 @@
 class BaselinesController < OpenReadController
   before_action :set_baseline, only: [:show, :update, :destroy]
-  before_action :authenticate, except: [:index, :show]
+  before_action :authenticate
 
   # GET /baselines
   # GET /baselines.json

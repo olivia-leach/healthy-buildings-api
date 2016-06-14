@@ -1,5 +1,6 @@
 class DaysController < ApplicationController
   before_action :set_day, only: [:show, :update, :destroy]
+  before_action :authenticate
 
   # GET /days
   # GET /days.json

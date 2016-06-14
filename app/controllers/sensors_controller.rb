@@ -1,5 +1,6 @@
 class SensorsController < ApplicationController
   before_action :set_sensor, only: [:show, :update, :destroy]
+  before_action :authenticate
 
   # GET /sensors
   # GET /sensors.json

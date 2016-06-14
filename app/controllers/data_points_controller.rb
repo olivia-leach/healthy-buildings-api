@@ -1,5 +1,6 @@
 class DataPointsController < ApplicationController
   before_action :set_data_point, only: [:show, :update, :destroy]
+  before_action :authenticate
 
   # GET /data_points
   # GET /data_points.json

@@ -1,6 +1,6 @@
 #
 class UsersController < ProtectedController
-  skip_before_action :authenticate, only: [:signup, :signin, :index, :show]
+  skip_before_action :authenticate, only: [:signup, :signin]
 
   # POST '/sign-up'
   def signup
