@@ -67,23 +67,41 @@ CSV.foreach('data/sensor_data.csv', headers: true) do |data|
 end
 
 # load daily data for each building
-CSV.foreach('data/daily_data.csv', headers: true) do |day|
+CSV.foreach('data/summary_data.csv', headers: true) do |day|
   hash = day.to_hash
   result = {
     "day" => hash["day"],
     "date" => hash["date"],
-    "aer_score" => hash["AER_score"],
-    "tc_score" => hash["TC_score"],
+    "enhanced_iaq" => hash["enhanced_iaq"],
+    "tc" => hash["tc"],
+    "iaq_perf" => hash["iaq_perf"],
+    "low_emit_air" => hash["low_emit_air"],
+    "iaq_assess" => hash["iaq_assess"],
+    "acoustic" => hash["acoustic"],
+    "low_emit_dirt" => hash["low_emit_dirt"],
+    "green_clean" => hash["green_clean"],
+    "ipm" => hash["ipm"],
+    "int_lighting" => hash["int_lighting"],
+    "daylight" => hash["daylight"],
+    "views" => hash["views"],
+    "mold" => hash["mold"],
+    "ets" => hash["ets"],
+    "surveys" => hash["surveys"],
+    "baseline" => hash["baseline"],
+    "aer_score" => hash["aer_score"],
+    "tc_score" => hash["tc_score"],
     "humidity_score" => hash["humidity_score"],
     "noise_score" => hash["noise_score"],
+    "rt_score" => hash["rt_score"],
+    "overall_score" => hash["overall_score"],
     "co2" => hash["co2"],
-    "aer" => hash["AER"],
+    "aer" => hash["aer"],
     "temp" => hash["temp"],
-    "rh" => hash["RH"],
-    "sh" => hash["SH"],
+    "rh" => hash["rh"],
+    "sh" => hash["sh"],
     "noise" => hash["noise"],
-    "pmv" => hash["PMV"],
-    "ppd" => hash["PPD"]
+    "pmv" => hash["pmv"],
+    "ppd" => hash["ppd"]
   }
   building_key = {}
   manager.buildings.each do |building|
