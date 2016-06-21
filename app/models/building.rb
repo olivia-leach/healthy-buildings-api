@@ -5,4 +5,5 @@ class Building < ActiveRecord::Base
   has_many :sensors
   has_many :measures
   has_many :days
+  has_many :details
 end

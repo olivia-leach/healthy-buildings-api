@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  resources :details, except: [:new, :edit]
   resources :days, except: [:new, :edit]
   resources :points, except: [:new, :edit]
   resources :data_points, except: [:new, :edit]

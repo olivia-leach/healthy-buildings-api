@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160606162338) do
+ActiveRecord::Schema.define(version: 20160620181033) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -84,6 +84,25 @@ ActiveRecord::Schema.define(version: 20160606162338) do
   end
 
   add_index "days", ["building_id"], name: "index_days_on_building_id", using: :btree
+
+  create_table "details", force: :cascade do |t|
+    t.integer  "pid"
+    t.integer  "day"
+    t.date     "date"
+    t.float    "co2"
+    t.float    "aer"
+    t.float    "temp"
+    t.float    "rh"
+    t.float    "sh"
+    t.float    "noise"
+    t.float    "pmv"
+    t.float    "ppd"
+    t.integer  "building_id", null: false
+    t.datetime "created_at",  null: false
+    t.datetime "updated_at",  null: false
+  end
+
+  add_index "details", ["building_id"], name: "index_details_on_building_id", using: :btree
 
   create_table "examples", force: :cascade do |t|
     t.text     "text",       null: false
@@ -168,6 +187,7 @@ ActiveRecord::Schema.define(version: 20160606162338) do
   add_foreign_key "baselines", "buildings"
   add_foreign_key "buildings", "users"
   add_foreign_key "days", "buildings"
+  add_foreign_key "details", "buildings"
   add_foreign_key "examples", "users"
   add_foreign_key "measures", "buildings"
   add_foreign_key "measures", "frameworks"
