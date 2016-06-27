@@ -91,6 +91,25 @@ CSV.foreach('data/sensor_daily_data.csv', headers: true) do |data|
   Detail.create!(result)
 end
 
+# load certificaiton data for each building
+CSV.foreach('data/leed_certifications.csv', headers: true) do |data|
+  hash = data.to_hash
+  result = {
+    "leedversion" => hash["leedversion"],
+    "rating" => hash["rating"],
+    "category" => hash["category"],
+    "credits" => hash["credits"],
+    "obtained" => hash["obtained"]
+  }
+  building_key = {}
+  manager.buildings.each do |building|
+    building_key[building["BID"]] = building["id"]
+  end
+  build_id = hash["bid"].to_i
+  result["building_id"] = building_key[build_id]
+  Certification.create!(result)
+end
+
 # load daily data for each building
 CSV.foreach('data/summary_data.csv', headers: true) do |day|
   hash = day.to_hash

@@ -6,4 +6,5 @@ class Building < ActiveRecord::Base
   has_many :measures
   has_many :days
   has_many :details
+  has_many :certifications
 end

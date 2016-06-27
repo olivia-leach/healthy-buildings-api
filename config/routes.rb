@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  resources :certifications, except: [:new, :edit]
   resources :details, except: [:new, :edit]
   resources :days, except: [:new, :edit]
   resources :points, except: [:new, :edit]
