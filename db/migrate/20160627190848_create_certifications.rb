@@ -5,6 +5,7 @@ class CreateCertifications < ActiveRecord::Migration
       t.text :rating
       t.text :category
       t.text :credits
+      t.text :label
       t.text :obtained
 
       t.references :building, index: true, foreign_key: true, null: false

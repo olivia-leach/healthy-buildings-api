@@ -50,6 +50,7 @@ ActiveRecord::Schema.define(version: 20160627190848) do
     t.text     "rating"
     t.text     "category"
     t.text     "credits"
+    t.text     "label"
     t.text     "obtained"
     t.integer  "building_id", null: false
     t.datetime "created_at",  null: false

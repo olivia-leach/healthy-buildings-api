@@ -92,13 +92,14 @@ CSV.foreach('data/sensor_daily_data.csv', headers: true) do |data|
 end
 
 # load certificaiton data for each building
-CSV.foreach('data/leed_certifications.csv', headers: true) do |data|
+CSV.foreach('data/leed_certifications.csv', headers: true, skip_blanks: true) do |data|
   hash = data.to_hash
   result = {
     "leedversion" => hash["leedversion"],
     "rating" => hash["rating"],
     "category" => hash["category"],
     "credits" => hash["credits"],
+    "label" => hash["label"],
     "obtained" => hash["obtained"]
   }
   building_key = {}
