@@ -7,4 +7,5 @@ class Building < ActiveRecord::Base
   has_many :days
   has_many :details
   has_many :certifications
+  has_many :thermals
 end

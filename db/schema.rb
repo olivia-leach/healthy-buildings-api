@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160627190848) do
+ActiveRecord::Schema.define(version: 20160630162734) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -187,6 +187,18 @@ ActiveRecord::Schema.define(version: 20160627190848) do
 
   add_index "sensors", ["building_id"], name: "index_sensors_on_building_id", using: :btree
 
+  create_table "thermals", force: :cascade do |t|
+    t.integer  "cat"
+    t.integer  "group"
+    t.float    "temp"
+    t.float    "hum"
+    t.integer  "building_id", null: false
+    t.datetime "created_at",  null: false
+    t.datetime "updated_at",  null: false
+  end
+
+  add_index "thermals", ["building_id"], name: "index_thermals_on_building_id", using: :btree
+
   create_table "users", force: :cascade do |t|
     t.string   "email",           null: false
     t.string   "token",           null: false
@@ -209,4 +221,5 @@ ActiveRecord::Schema.define(version: 20160627190848) do
   add_foreign_key "points", "sensors"
   add_foreign_key "profiles", "users"
   add_foreign_key "sensors", "buildings"
+  add_foreign_key "thermals", "buildings"
 end

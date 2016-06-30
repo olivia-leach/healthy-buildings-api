@@ -192,3 +192,12 @@ CSV.foreach('data/baseline_measures.csv', headers: true) do |measures|
   result["building_id"] = building_key[build_id]
   Measure.create!(result)
 end
+
+# load thermal comfort plotting data
+manager.buildings.each do |building|
+  CSV.foreach('data/tc_data.csv', headers: true) do |point|
+    hash = point.to_hash
+    hash['building_id'] = building['id']
+    Thermal.create!(hash)
+  end
+end
