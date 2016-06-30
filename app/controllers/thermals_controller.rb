@@ -1,5 +1,6 @@
 class ThermalsController < ApplicationController
   before_action :set_thermal, only: [:show, :update, :destroy]
+  before_action :authenticate
 
   # GET /thermals
   # GET /thermals.json
