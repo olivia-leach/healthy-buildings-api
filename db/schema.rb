@@ -82,6 +82,8 @@ ActiveRecord::Schema.define(version: 20160630162734) do
     t.float    "tc_score"
     t.float    "humidity_score"
     t.float    "noise_score"
+    t.float    "steps_score"
+    t.float    "sleep_score"
     t.float    "rt_score"
     t.float    "overall_score"
     t.float    "co2"
@@ -92,6 +94,9 @@ ActiveRecord::Schema.define(version: 20160630162734) do
     t.float    "noise"
     t.float    "pmv"
     t.float    "ppd"
+    t.float    "steps"
+    t.float    "sleep"
+    t.integer  "num_sensors"
     t.integer  "building_id",    null: false
     t.datetime "created_at",     null: false
     t.datetime "updated_at",     null: false

@@ -23,6 +23,8 @@ class CreateDays < ActiveRecord::Migration
       t.float :tc_score
       t.float :humidity_score
       t.float :noise_score
+      t.float :steps_score
+      t.float :sleep_score
       t.float :rt_score
       t.float :overall_score
       t.float :co2
@@ -33,6 +35,9 @@ class CreateDays < ActiveRecord::Migration
       t.float :noise
       t.float :pmv
       t.float :ppd
+      t.float :steps
+      t.float :sleep
+      t.integer :num_sensors
 
       t.references :building, index: true, foreign_key: true, null: false
 

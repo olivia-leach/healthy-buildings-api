@@ -112,7 +112,7 @@ CSV.foreach('data/leed_certifications.csv', headers: true, skip_blanks: true) do
 end
 
 # load daily data for each building
-CSV.foreach('data/summary_data.csv', headers: true) do |day|
+CSV.foreach('data/summary_data_inclHealth.csv', headers: true) do |day|
   hash = day.to_hash
   result = {
     "day" => hash["day"],
@@ -137,6 +137,8 @@ CSV.foreach('data/summary_data.csv', headers: true) do |day|
     "tc_score" => hash["tc_score"],
     "humidity_score" => hash["humidity_score"],
     "noise_score" => hash["noise_score"],
+    "steps_score" => hash["steps_score"],
+    "sleep_score" => hash["sleep_score"],
     "rt_score" => hash["rt_score"],
     "overall_score" => hash["overall_score"],
     "co2" => hash["co2"],
@@ -146,7 +148,10 @@ CSV.foreach('data/summary_data.csv', headers: true) do |day|
     "sh" => hash["sh"],
     "noise" => hash["noise"],
     "pmv" => hash["pmv"],
-    "ppd" => hash["ppd"]
+    "ppd" => hash["ppd"],
+    "steps" => hash["steps"],
+    "sleep" => hash["sleep"],
+    "num_sensors" => hash["num_sensors"]
   }
   building_key = {}
   manager.buildings.each do |building|
